@@ -33,6 +33,7 @@ public class TalkingDataSearch
 #endif
             return search;
         }
+
         return null;
     }
 
@@ -51,6 +52,7 @@ public class TalkingDataSearch
             this.category = category;
 #endif
         }
+
         return this;
     }
 
@@ -69,6 +71,7 @@ public class TalkingDataSearch
             this.content = content;
 #endif
         }
+
         return this;
     }
 

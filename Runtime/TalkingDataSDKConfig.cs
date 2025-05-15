@@ -7,74 +7,75 @@ public class TalkingDataSDKConfig
 
     public static TalkingDataSDKConfig CreateConfig()
     {
-        if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor)
-        {
-            TalkingDataSDKConfig config = new TalkingDataSDKConfig();
-#if UNITY_ANDROID
-            config.javaObj = new AndroidJavaObject("com.tendcloud.tenddata.TalkingDataSDKConfig");
+        var config = new TalkingDataSDKConfig();
+#if UNITY_ANDROID || !UNITY_EDITOR
+        config.javaObj = new AndroidJavaObject("com.tendcloud.tenddata.TalkingDataSDKConfig");
 #endif
-            return config;
-        }
-        return null;
+        return config;
     }
 
+    /// <summary>
+    /// 是否 允许收集IMEI和MEID
+    /// </summary>
+    /// <param name="enabled"></param>
+    /// <returns></returns>
     public TalkingDataSDKConfig SetIMEIAndMEIDEnabled(bool enabled)
     {
-        if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor)
-        {
-#if UNITY_ANDROID
-            javaObj.Call<AndroidJavaObject>("setIMEIAndMEIDEnabled", enabled);
+#if UNITY_ANDROID || !UNITY_EDITOR
+        javaObj.Call<AndroidJavaObject>("setIMEIAndMEIDEnabled", enabled);
 #endif
-            return this;
-        }
-        return null;
+        return this;
     }
 
+    /// <summary>
+    /// 是否 允许收集MAC
+    /// </summary>
+    /// <param name="enabled"></param>
+    /// <returns></returns>
     public TalkingDataSDKConfig SetMACEnabled(bool enabled)
     {
-        if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor)
-        {
-#if UNITY_ANDROID
-            javaObj.Call<AndroidJavaObject>("setMACEnabled", enabled);
+#if UNITY_ANDROID || !UNITY_EDITOR
+        javaObj.Call<AndroidJavaObject>("setMACEnabled", enabled);
 #endif
-            return this;
-        }
-        return null;
+        return this;
     }
 
+    /// <summary>
+    /// 是否 允许收集应用列表
+    /// </summary>
+    /// <param name="enabled"></param>
+    /// <returns></returns>
     public TalkingDataSDKConfig SetAppListEnabled(bool enabled)
     {
-        if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor)
-        {
-#if UNITY_ANDROID
-            javaObj.Call<AndroidJavaObject>("setAppListEnabled", enabled);
+#if UNITY_ANDROID || !UNITY_EDITOR
+        javaObj.Call<AndroidJavaObject>("setAppListEnabled", enabled);
 #endif
-            return this;
-        }
-        return null;
+        return this;
     }
 
+    /// <summary>
+    /// 是否 允许收集位置信息
+    /// </summary>
+    /// <param name="enabled"></param>
+    /// <returns></returns>
     public TalkingDataSDKConfig SetLocationEnabled(bool enabled)
     {
-        if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor)
-        {
-#if UNITY_ANDROID
-            javaObj.Call<AndroidJavaObject>("setLocationEnabled", enabled);
+#if UNITY_ANDROID || !UNITY_EDITOR
+        javaObj.Call<AndroidJavaObject>("setLocationEnabled", enabled);
 #endif
-            return this;
-        }
-        return null;
+        return this;
     }
 
+    /// <summary>
+    /// 是否 允许收集网络信息
+    /// </summary>
+    /// <param name="enabled"></param>
+    /// <returns></returns>
     public TalkingDataSDKConfig SetWifiEnabled(bool enabled)
     {
-        if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor)
-        {
-#if UNITY_ANDROID
-            javaObj.Call<AndroidJavaObject>("setWifiEnabled", enabled);
+#if UNITY_ANDROID || !UNITY_EDITOR
+        javaObj.Call<AndroidJavaObject>("setWifiEnabled", enabled);
 #endif
-            return this;
-        }
-        return null;
+        return this;
     }
 }

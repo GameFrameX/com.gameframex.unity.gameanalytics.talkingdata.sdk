@@ -1,33 +1,39 @@
 using UnityEngine;
 
 
+/// <summary>
+/// 用户类型
+/// </summary>
 public enum TalkingDataProfileType
 {
-    ANONYMOUS   = 0,
-    REGISTERED  = 1,
-    SINA_WEIBO  = 2,
-    QQ          = 3,
-    QQ_WEIBO    = 4,
-    ND91        = 5,
-    WEIXIN      = 6,
-    TYPE1       = 11,
-    TYPE2       = 12,
-    TYPE3       = 13,
-    TYPE4       = 14,
-    TYPE5       = 15,
-    TYPE6       = 16,
-    TYPE7       = 17,
-    TYPE8       = 18,
-    TYPE9       = 19,
-    TYPE10      = 20
+    ANONYMOUS = 0,
+    REGISTERED = 1,
+    SINA_WEIBO = 2,
+    QQ = 3,
+    QQ_WEIBO = 4,
+    ND91 = 5,
+    WEIXIN = 6,
+    TYPE1 = 11,
+    TYPE2 = 12,
+    TYPE3 = 13,
+    TYPE4 = 14,
+    TYPE5 = 15,
+    TYPE6 = 16,
+    TYPE7 = 17,
+    TYPE8 = 18,
+    TYPE9 = 19,
+    TYPE10 = 20
 }
 
 
+/// <summary>
+/// 性别
+/// </summary>
 public enum TalkingDataGender
 {
-    UNKNOWN     = 0,
-    MALE        = 1,
-    FEMALE      = 2
+    UNKNOWN = 0,
+    MALE = 1,
+    FEMALE = 2
 }
 
 
@@ -65,6 +71,7 @@ public class TalkingDataProfile
 #endif
             return profile;
         }
+
         return null;
     }
 
@@ -83,6 +90,7 @@ public class TalkingDataProfile
             this.name = name;
 #endif
         }
+
         return this;
     }
 
@@ -103,6 +111,7 @@ public class TalkingDataProfile
             this.type = type;
 #endif
         }
+
         return this;
     }
 
@@ -123,6 +132,7 @@ public class TalkingDataProfile
             this.gender = gender;
 #endif
         }
+
         return this;
     }
 
@@ -141,6 +151,7 @@ public class TalkingDataProfile
             this.age = age;
 #endif
         }
+
         return this;
     }
 
@@ -160,6 +171,7 @@ public class TalkingDataProfile
             this.property1 = property;
 #endif
         }
+
         return this;
     }
 
@@ -179,6 +191,7 @@ public class TalkingDataProfile
             this.property2 = property;
 #endif
         }
+
         return this;
     }
 
@@ -198,6 +211,7 @@ public class TalkingDataProfile
             this.property3 = property;
 #endif
         }
+
         return this;
     }
 
@@ -217,6 +231,7 @@ public class TalkingDataProfile
             this.property4 = property;
 #endif
         }
+
         return this;
     }
 
@@ -236,6 +251,7 @@ public class TalkingDataProfile
             this.property5 = property;
 #endif
         }
+
         return this;
     }
 
@@ -255,6 +271,7 @@ public class TalkingDataProfile
             this.property6 = property;
 #endif
         }
+
         return this;
     }
 
@@ -274,6 +291,7 @@ public class TalkingDataProfile
             this.property7 = property;
 #endif
         }
+
         return this;
     }
 
@@ -293,6 +311,7 @@ public class TalkingDataProfile
             this.property8 = property;
 #endif
         }
+
         return this;
     }
 
@@ -312,6 +331,7 @@ public class TalkingDataProfile
             this.property9 = property;
 #endif
         }
+
         return this;
     }
 
@@ -331,6 +351,7 @@ public class TalkingDataProfile
             this.property10 = property;
 #endif
         }
+
         return this;
     }
 
@@ -366,6 +387,7 @@ public class TalkingDataProfile
         {
             androidObject = new AndroidJavaObject("java.lang.Double", parameter);
         }
+
         return androidObject;
     }
 #endif

@@ -10,8 +10,6 @@ using System;
 using System.Runtime.InteropServices;
 using System.Collections;
 #endif
-
-
 public static class TalkingDataSDK
 {
 #if UNITY_ANDROID
