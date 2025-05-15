@@ -1,0 +1,14 @@
+{
+  "name": "GameFrameX.TalkingData.Sdk.Runtime",
+  "references": [],
+  "rootNamespace": "GameFrameX.TalkingData.Sdk.Runtime",
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

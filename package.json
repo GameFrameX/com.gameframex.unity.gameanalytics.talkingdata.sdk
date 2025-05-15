@@ -1,0 +1,22 @@
+{
+  "name": "com.gameframex.unity.gameanalytics.talkingdata.sdk",
+  "displayName": "Game Frame X Game Analytics(Talking Data SDK)",
+  "category": "Game Framework X",
+  "description": "Game Frame X Game Analytics TalkingData SDK Component",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "keywords": [
+    "Game Framework X"
+  ],
+  "repository": {
+    "name": "com.gameframex.unity.gameanalytics.talkingdata.sdk",
+    "url": "https://github.com/gameframex/com.gameframex.unity.gameanalytics.talkingdata.sdk.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "Blank",
+    "email": "alianblank@outlook.com",
+    "url": "https://gameframex.doc.alianblank.com"
+  },
+  "dependencies": {}
+}
