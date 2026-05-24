@@ -1,71 +1,92 @@
-## TalkingData Unity SDK
+<div align="center">
+  <img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="GameFrameX Logo" width="160" />
 
-TalkingData Unity 平台 SDK 由 `封装层` 和 `Native SDK` 两部分构成，目前 GitHub 上提供了封装层代码，需要从 [TalkingData官网](https://www.talkingdata.com/spa/sdk/#/universal?sdkPlatform=Unity) 下载最新版的 Android 和 iOS 平台 Native SDK，组合使用。
+  # GameFrameX GameAnalytics TalkingData SDK
 
-### 集成说明
+  [![Version](https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.gameanalytics.talkingdata.sdk)](https://github.com/GameFrameX/com.gameframex.unity.gameanalytics.talkingdata.sdk/releases)
+  [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE.md)
+  [![Documentation](https://img.shields.io/badge/docs-gameframex-blue.svg)](https://gameframex.doc.alianblank.com)
 
-1. 下载本项目（封装层）到本地；
-2. 访问 [TalkingData官网](https://www.talkingdata.com/spa/sdk/#/universal?sdkPlatform=Unity) 下载最新版的 Android 和 iOS 平台 TalkingData SDK (Native SDK)
-    - 方法1：选择 Unity 平台进行功能定制；
-    - 方法2：分别选择 Android 和 iOS 平台进行功能定制，请确保两个平台功能项一致；
-3. 将下载的最新版 `Native SDK` 复制到 `封装层` 中，构成完整的 Unity SDK。
-    - Android 平台  
-      将最新的 `.jar` 文件复制到 `Assets/Plugins/Android` 目录下
-    - iOS 平台  
-      将最新的 `.h` 和 `.a` 文件复制到 `Assets/Plugins/iOS` 目录下
-4. 按 `Native SDK` 功能选项对 `封装层` 代码进行必要的修改，详见“注意事项”第2条；
-5. 将 Unity SDK 集成您需要统计的工程中，并按 [集成文档](http://doc.talkingdata.com/posts/1026) 进行必要配置和功能调用。
+  All-in-One Solution for Indie Game Development · Empowering Indie Developers' Dreams
 
-### 快速集成-配置权限
-Android 平台 SDK 需要获取适当的权限才可以正常工作，开发者需要在 AndroidManifest.xml 文件中添加下列所有权限申明。
+  [Documentation](https://gameframex.doc.alianblank.com) | [Quick Start](#quick-start)
 
-| 权限                           | 用途                                                                      |
-| ------------------------------ | ------------------------------------------------------------------------- |
-| INTERNET                       | 允许程序联网和发送统计数据的权限                                          |
-| ACCESS_NETWORK_STATE           | 允许应用检测网络连接状态，在网络异常状态下避免数据发送，节省流量和电量    |
-| READ_PHONE_STATE               | 允许应用以只读的方式访问手机设备的信息，通过获取的信息来唯一标识用户      |
-| ACCESS_WIFI_STATE              | 获取设备的MAC地址，同样用来标识唯一用户                                   |
-| WRITE_EXTERNAL_STORAGE         | 用于保存设备信息，以及记录日志                                            |
-| ACCESS_FINE_LOCATION（可选）   | 可通过GPS获取设备的位置信息，用来修正用户的地域分布数据，使报表数据更准确 |
-| ACCESS_COARSE_LOCATION（可选） | 用来获取该应用被使用的粗略位置信息                                        |
+  **English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+</div>
 
-### 快速集成-添加依赖框架
-iOS 平台 SDK 需要添加适当的依赖框架才可以正常工作，开发者需要在编译生成的 Xcode 工程中添加下列所有依赖框架。
+---
 
-| 框架                              | 用途                       |
-| --------------------------------- | -------------------------- |
-| AdServices.framework              | Apple Search Ads 归因      |
-| StoreKit.framework                | Apple SKAdNetwork 归因转化 |
-| AppTrackingTransparency.framework | 获取App跟踪授权状态        |
-| AdSupport.framework               | 获取advertisingIdentifier  |
-| CoreTelephony.framework           | 获取运营商标识             |
-| Security.framework                | 辅助存储设备标识           |
-| SystemConfiguration.framework     | 检测网络状况               |
-| libc++.                           | tbd 支持c++11标准          |
-| libz.tbd                          | 进行数据压缩               |
+## Project Overview
 
-iOS 12.0 及以上系统获取 WiFi 信息时，需要添加 Access WiFi Information 选项：
-选择要添加的 Target，点击 +Capability，在弹出的框中双击 Access WiFi Information 进行添加。
+TalkingData Unity SDK consists of a `wrapper layer` and `Native SDK`. The wrapper layer code is available on GitHub, while the latest Android and iOS Native SDKs need to be downloaded from the [TalkingData website](https://www.talkingdata.com/spa/sdk/#/universal?sdkPlatform=Unity).
 
-iOS 14.0 及以上系统获取 IDFA 时，需要用户授权：
-在 Info.plist 中添加 Privacy - Tracking Usage Description Key，Type 为 String 类型，Value 为您的声明文字。
+## Integration Guide
 
-### 注意事项
+1. Download this project (wrapper layer) locally
+2. Visit the [TalkingData website](https://www.talkingdata.com/spa/sdk/#/universal?sdkPlatform=Unity) to download the latest Android and iOS TalkingData SDK (Native SDK)
+    - Option 1: Select Unity platform for feature customization
+    - Option 2: Select Android and iOS platforms separately for feature customization, ensure both platforms have the same features
+3. Copy the latest `Native SDK` into the `wrapper layer` to form the complete Unity SDK
+    - Android: Copy the latest `.jar` file to `Assets/Plugins/Android` directory
+    - iOS: Copy the latest `.h` and `.a` files to `Assets/Plugins/iOS` directory
+4. Modify the `wrapper layer` code as needed based on Native SDK feature options (see Notes section)
+5. Integrate the Unity SDK into your project and configure it according to the [integration documentation](http://doc.talkingdata.com/posts/1026)
 
-1. 分别选择 Android 和 iOS 平台进行功能定制时，请确保两个平台功能项一致。
-2. 如果申请 Native SDK 时选择了可选功能，则需要在本项目中启用所选功能对应的封装层代码。  
-   a) 在 `Assets/Plugins/iOS/TalkingDataSDK.mm` 文件中释放所选行业或功能的宏定义。  
-   b) 在 Unity 中添加相应功能的宏定义  
-   打开 `Build Settings`，先在 `Platform` 中选择 `Android` 或 `iOS` 平台，再点击 `Switch Platform`。当切换完平台后，点击 `Player Settings`，然后在 `Other Settings` 的 `Scripting Define Symbols` 中输入所选行业或功能相应的宏（如果有多个宏，需要用分号隔开；Android 和 iOS 需要分别添加）。
+## Android Permissions
 
-   各行业功能宏定义如下。
+Android SDK requires the following permissions in AndroidManifest.xml:
 
-   | 行业&功能 | 宏定义       |
-   | --------- | ------------ |
-   | 电商零售  | TD_RETAIL    |
-   | 游戏娱乐  | TD_GAME      |
-   | 金融借贷  | TD_FINANCE   |
-   | 旅游出行  | TD_TOUR      |
-   | 在线教育  | TD_ONLINEEDU |
-   | 小说阅读  | TD_READING   |
-   | 其他行业  | TD_OTHER     |
+| Permission | Purpose |
+|---|---|
+| INTERNET | Allow network access for sending analytics data |
+| ACCESS_NETWORK_STATE | Detect network status to avoid sending data when offline |
+| READ_PHONE_STATE | Access device info for unique user identification |
+| ACCESS_WIFI_STATE | Get device MAC address for user identification |
+| WRITE_EXTERNAL_STORAGE | Save device info and logs |
+| ACCESS_FINE_LOCATION (Optional) | Get GPS location to improve regional data accuracy |
+| ACCESS_COARSE_LOCATION (Optional) | Get approximate location info |
+
+## iOS Dependencies
+
+iOS SDK requires the following frameworks in the generated Xcode project:
+
+| Framework | Purpose |
+|---|---|
+| AdServices.framework | Apple Search Ads attribution |
+| StoreKit.framework | Apple SKAdNetwork attribution conversion |
+| AppTrackingTransparency.framework | Get app tracking authorization status |
+| AdSupport.framework | Get advertisingIdentifier |
+| CoreTelephony.framework | Get carrier identifier |
+| Security.framework | Assist with device identifier storage |
+| SystemConfiguration.framework | Detect network status |
+| libc++.tbd | Support C++11 standard |
+| libz.tbd | Data compression |
+
+For iOS 12.0+, add the Access WiFi Information capability: Select Target, click +Capability, and double-click Access WiFi Information.
+
+For iOS 14.0+, user authorization is required to get IDFA: Add Privacy - Tracking Usage Description Key in Info.plist with Type String and your description text as Value.
+
+## Notes
+
+1. When selecting features for Android and iOS separately, ensure both platforms have the same features.
+2. If optional features were selected when requesting the Native SDK, enable the corresponding wrapper layer code:
+   a) Uncomment the macro definitions for selected industry or features in `Assets/Plugins/iOS/TalkingDataSDK.mm`
+   b) Add macro definitions in Unity: Open `Build Settings`, select platform, click `Switch Platform`, then in `Player Settings` > `Other Settings` > `Scripting Define Symbols`, enter the macros (separate with semicolons; add separately for Android and iOS)
+
+| Industry & Feature | Macro |
+|---|---|
+| E-commerce Retail | TD_RETAIL |
+| Gaming & Entertainment | TD_GAME |
+| Financial Lending | TD_FINANCE |
+| Travel | TD_TOUR |
+| Online Education | TD_ONLINEEDU |
+| Novel Reading | TD_READING |
+| Other Industries | TD_OTHER |
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for details.
+
+## License
+
+This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) for details.
