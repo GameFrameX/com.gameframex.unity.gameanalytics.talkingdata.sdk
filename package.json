@@ -1,12 +1,12 @@
 {
   "name": "com.gameframex.unity.gameanalytics.talkingdata.sdk",
   "displayName": "Game Frame X Game Analytics(Talking Data SDK)",
-  "category": "Game Framework X",
-  "description": "Game Frame X Game Analytics TalkingData SDK Component",
+  "category": "Game Frame X",
+  "description": "TalkingData Unity SDK wrapper package for GameFrameX GameAnalytics. Ships the TalkingData wrapper layer under Plugins for Android (jar, with INTERNET / network / Wi-Fi / phone-state manifest permissions) and iOS (.h / .a, requiring AdServices, StoreKit, AppTrackingTransparency, AdSupport, CoreTelephony, and Security frameworks in the generated Xcode project). The latest native SDKs are downloaded from the TalkingData website and combined with this wrapper to form the complete Unity SDK. Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX GameAnalytics 的 TalkingData Unity SDK 封装功能包。在 Plugins 下提供 TalkingData 封装层：Android（jar，需在 Manifest 配置 INTERNET / 网络状态 / Wi-Fi / 设备信息权限）与 iOS（.h / .a，生成的 Xcode 工程需添加 AdServices、StoreKit、AppTrackingTransparency、AdSupport、CoreTelephony、Security 框架）。最新原生 SDK 从 TalkingData 官网下载并与封装层组合成完整 Unity SDK。文档：https://gameframex.doc.alianblank.com",
   "version": "1.1.0",
   "unity": "2019.4",
   "keywords": [
-    "Game Framework X"
+    "Game Frame X"
   ],
   "repository": {
     "name": "com.gameframex.unity.gameanalytics.talkingdata.sdk",
